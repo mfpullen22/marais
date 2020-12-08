@@ -1,0 +1,147 @@
+#wrap {
+    width: 90%;
+    margin:0 auto;
+    text-align:left;
+    margin-top:8px;
+    padding:5px;
+    background:#fff;
+    font-family: Avenir;
+    font-size:13px;    
+    line-height:16px;
+}
+
+#wrap legend{
+	font-size:26px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#7a0019;
+	font-weight:bold;
+	font-style:italic;
+    padding-bottom:10px;
+}
+
+#wrap span.criteria {
+	display:block;
+	font-size:16px;
+	color:#000;
+    padding-right: 40px;
+}
+
+#wrap span.criteria2 {
+	display:block;
+	font-size:16px;
+	color: #083acf;
+    font-weight:bold;
+    padding-right:40px;
+}
+
+
+#wrap span.criteria3 {
+	display:block;
+	font-size:16px;
+    padding-right:40px;
+    color: gray;
+    font-style: italic;
+}
+
+#wrap span.footnote {
+    display:block;
+	font-size:12px;
+	color:#000;
+    padding-right:40px
+}
+
+.category {
+    display:block;
+	font-size:22px;
+	color:#000;
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+.criteria {
+    float: left;
+}
+
+table {
+    width: 100%;
+}
+
+tr > td {
+    padding-bottom: 15px
+}
+
+#total {
+    display:block;
+	font-size:24px;
+	color:#000;
+    font-weight:bold;
+    text-align: center;
+}
+
+#score {
+    display:block;
+	font-size:24px;
+	color:#000;
+    font-weight:bold;
+}
+
+#interpretation {
+    display:block;
+	font-size:24px;
+	color:#000;
+    font-weight:bold;
+    text-align:center;
+}
+
+/* Slider Button CSS */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+    float:right;
+  }
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #2196F3;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}

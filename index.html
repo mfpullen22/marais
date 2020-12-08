@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marais TBM Criteria Calculator</title>
+        <link rel = "stylesheet" type = "text/css" href = "marais.css"" />
+        <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body bgcolor="#7a0019">
+        <div id="wrap">
+            <form action="" onsubmit="return false;" autocomplete="off" id = "maraisForm">
+                    <fieldset>
+                     <legend>Marais TBM Criteria Calculator</legend>
+                         <p class="category">Clinical Criteria (Maximum Score: 6)</p>
+                           <table>
+                                <tr>
+                                   <td><span class="criteria">Symptom duration of more than 5 days (4 points)</span></td>
+                                   <td>
+                                        <label class="switch">
+                                            <input type="checkbox" class="clin" name="clinical" value="4">
+                                            <span class="slider"></span>
+                                         </label>
+                                    </td>
+                               </tr>
+                               <tr>
+                                   <td><span class="criteria">Systemic symptoms suggestive of TB (2 points)<sup>1</sup></span></td>
+                                   <td>
+                                        <label class="switch">
+                                            <input type="checkbox" class="clin disTest" name="clinical" value="2">
+                                            <span class="slider"></span>
+                                        </label> 
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class = "criteria">History of recent (within past year) close contact with an individual with pulmonary TB (2 points)</span></td>
+                                   <td>
+                                        <label class="switch">
+                                            <input type="checkbox" class="clin" name="clinical" value="2">
+                                            <span class="slider"></span>
+                                        </label>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class = "criteria">Focal neurologic deficit (excluding cranial nerve palsies) (1 point)</span></td>
+                                   <td>
+                                        <label class="switch">
+                                            <input type="checkbox" class="clin" name="clinical" value="1>
+                                            <span class="slider"></span>
+                                        </label> 
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class = "criteria">Cranial nerve palsy (1 point)</span></td>
+                                   <td>
+                                        <label class="switch">
+                                            <input type="checkbox" class="clin" name="clinical" value="1">
+                                            <span class="slider"></span>
+                                        </label> 
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class = "criteria">Altered consciousness (1 point)</span></td>
+                                   <td>
+                                        <label class="switch">
+                                            <input type="checkbox" class="clin" name="clinical" value="1">
+                                            <span class="slider"></span>
+                                        </label>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <span class = "footnote"><sup>1</sup> - At least one of the following: night sweats, persistent cough for more than 2 weeks, weight loss (or poor weight gain in children)</span>
+                                       <br>
+                                       <span class= "footnote"><sup>2</sup> - In children less than 10 years, thsoe with a positive TST or IGRA meet this criteria</span>
+                                   </td>
+                               </tr>
+                           </table>
+
+                     <p class="category">CSF Criteria (Maximum Score: 4)</p>
+                        <table>
+                            <tr>
+                                <td><span class="criteria">Clear appearance (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="csf" value="1">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">Cells 10-500 per ul (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="csf" value="1">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">Lymphocutic predominance (>50%) (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="csf" value="1">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">Protein concentration greater than 1g/L (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="csf" value="1">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">CSF to plasma glucose ratio of <50% or absolute CSF glucose concentration < 2.2mmol/L (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="csf" value="1">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>      
+                        </table>
+                    <!-- REMEMBER: Need to make sure maximum score is not excceded. Maybe nest this inside total calculation function? -->
+
+                     <p class="category">Cerebral Imaging Criteria (Maximum Score: 6)</p>
+                        <table>
+                            <tr>
+                                <td><span class="criteria2">Is cerebral imaging available?</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="imgDisable">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria3">Hydrocephalus (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="img imgDis" value="1" disabled>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria3">Basal meningeal enhancement (2 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="img imgDis" value="2" disabled>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria3">Tuberculoma (2 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="img imgDis" value="2" disabled>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria3">Infarct (1 point)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="img imgDis" value="1" disabled>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria3">Pre-contrast basal hyperdensity (2 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="img imgDis" value="2" disabled>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr> 
+                        </table>
+                    <!-- REMEMBER: Need to make sure maximum score is not excceded. Maybe nest this inside total calculation function? -->
+
+                     <p class="category">Evidence of TB Elsewhere (Maximum Score: 4)</p>
+                       <table>
+                            <tr>
+                                <td><span class="criteria">Chest radiograph suggestive of active TB (non-miliary) (2 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="else" value="2">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">Chest radiograph suggestive of miliary TB (4 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="else" value="4">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">CT/MRI/Ultrasound evidence of TB outside the CNS (2 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="else" value="2">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">AFB identified or MTB cultured from another source (blood, sputum, lymph node, gastric washing, urine) (4 points</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="else" value="4">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="criteria">Positive commercial NAAT from extra-neural specimen (4 points)</span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" class="else" value="4">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr> 
+                       </table>
+
+                    <!-- REMEMBER: Need to make sure maximum score is not excceded. Maybe nest this inside total calculation function? -->
+                  
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Result</legend>
+                        <p id="total">Total Score: <span id="totalScore">-</span></p>
+                        <p id="interpretation">Select Criteria Above</p>
+                    </fieldset>
+
+            </form>
+        <script src="marais.js" async defer></script>
+    </body>
+</html>
+
+<!-- 
+Clinical Criteria  (Max score 6)
+    Symptom duration of more than 5 days (4)
+    Systemic symptoms suggestive of TB (one or more of the following): weight loss (or poor weight gain in children), night sweats, or persistent cough for more than 2 weeks (2)
+    History of recent (within past year) close contact with an individual with pulmonary TB or a positive TST or IGRA (only in children less than10 years of age) (2)
+    Focal neurologic deficit (excluding cranial nerve palsies) (1)
+    Cranial nerve palsy (1)
+    Altered consciousness (1)
+
+CSF Criteria (Max score 4)
+    Clear appearance (1)
+    Cells 10-500 per ul (1)
+    Lymphocytic predominance (>50%) (1)
+    Protein concentration greater than 1g/L (1)
+    CSF to plasma glucose ration of less than 50% or absolute CSF glucose concentration less than 2.2mmol/L (1)
+
+Cerebral Imaging Criteria (Max Score 6)
+    Hydrocephalus (1)
+    Basal meningeal enhancement (2)
+    Tuberculoma (2)
+    Infarct (1)
+    Pre-contrast basal hyperdensity (2)
+
+Evidence of TB Elsewhere (Max score 4)
+    Chest radiograph suggestive of active TB (signs of TB:2, miliary: 4)
+    CT/MRI/US evidence of TB outside the CNS (2)
+    AFB identified or MTB cultured from another source (blood, sputum lymph node, gastric washing, urine) (4)
+    Positive commercial NAAT from extra-neural specimen (4)
+
+
+Exclusion of Alternative Diagnosis 
+    (No Score, just a statement) 
+
+SCORING:
+Probably TBM -> 12 or above when imaging available; 10 or above when imaging not available
+Possible TBM -> 6-11 when imaging available; 6-9 when no imaging available
+
+-->
